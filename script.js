@@ -20,4 +20,25 @@ function addStudent() {
 
     alert("Student Registered Successfully");
 
+<<<<<<< HEAD
+=======
+    document.getElementById("studentForm").reset();
+});
+
+function searchStudent() {
+
+    let roll = document.getElementById("search").value;
+
+    let student = students.find(s => s.roll === roll);
+
+    if (student) {
+        document.getElementById("result").innerHTML =
+            "Student Found: " + student.name;
+    }
+    else {
+        document.getElementById("result").innerHTML =
+            "Student Not Found";
+    }
+
+>>>>>>> student-search
 }
