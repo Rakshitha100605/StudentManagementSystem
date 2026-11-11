@@ -1,19 +1,23 @@
 
-document.getElementById("studentForm").addEventListener("submit", function(e) {
+let students = [];
 
-    e.preventDefault();
+function addStudent() {
 
     let name = document.getElementById("name").value;
     let roll = document.getElementById("roll").value;
-    let department = document.getElementById("department").value;
+
+    if (name === "" || roll === "") {
+        alert("Enter student details");
+        return;
+    }
+
+    students.push({name: name, roll: roll});
 
     let li = document.createElement("li");
+    li.textContent = name + " - " + roll;
 
-    li.innerHTML = "Name: " + name +
-                   " | Roll No: " + roll +
-                   " | Department: " + department;
+    document.getElementById("list").appendChild(li);
 
-    document.getElementById("studentList").appendChild(li);
+    alert("Student Registered Successfully");
 
-    document.getElementById("studentForm").reset();
-});
+}
